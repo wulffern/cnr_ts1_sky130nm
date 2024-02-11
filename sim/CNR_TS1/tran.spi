@@ -25,7 +25,7 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-VPWR  PWRUP_1V8  VSS  pwl 0 0 10n {AVDD}
+VPWR  PWRUP_1V8  VSS  pwl 0 0 39n 0 40n {AVDD}
 
 *-----------------------------------------------------------------
 * DUT
@@ -41,10 +41,14 @@ VPWR  PWRUP_1V8  VSS  pwl 0 0 10n {AVDD}
 * PROBE
 *----------------------------------------------------------------
 
-*.save all
+#ifdef Debug
+.save all
+#endif
 .save i(vdd)
 .save v(do_1v8)
 .save v(XDUT.VB_FVF) v(XDUT.VDD_ROSC) v(XDUT.VD)
+.save v(PWRUP_1V8)
+.save v(RST_N_1V8)
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -62,7 +66,7 @@ optran 0 0 0 10n 1u 0
 foreach vtemp -40 -20 0 20 40 80 125
 
   option temp=$vtemp
-  tran 1n 100n
+  tran 1n 200n
 
   set fend = .raw
   write {cicname}_$vtemp$fend

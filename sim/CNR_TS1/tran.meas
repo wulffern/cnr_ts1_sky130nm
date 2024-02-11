@@ -12,14 +12,17 @@ foreach vtemp -40 -20 0 20 40 80 125
 set fend = .raw
 load {cicname}_$vtemp$fend
 
-let cut-tstart = 10n
-let cut-tstop = 100n
+
+let ivdd = -i(vdd)
+
+meas tran ivdd_off_$vtemp AVG ivdd FROM=20n TO=29n
+
+meas tran ivdd_$vtemp AVG ivdd FROM=60n TO=200n
+
+
+let cut-tstart = 100n
+let cut-tstop = 200n
 cutout
-
-let ipvdd = -i(vdd)
-
-meas tran ivdd_$vtemp AVG ipvdd
-
 
 *- Do FFT
 linearize v(do_1v8)

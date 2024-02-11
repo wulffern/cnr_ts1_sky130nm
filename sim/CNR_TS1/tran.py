@@ -30,7 +30,6 @@ def main(name):
         freq = df["frequency"]
         fxmax = spec.argmax()
         fymax = float(np.abs(freq[fxmax]))
-        print(fymax)
         obj["freq_" + key] = fymax
 
     # Save new yaml file

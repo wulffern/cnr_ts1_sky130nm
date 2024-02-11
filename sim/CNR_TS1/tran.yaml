@@ -1,10 +1,44 @@
-#<name>:
-#  src:
-#    - <paramters>
-#  typ: <typical spec value>
-#  name: <long name>
-#  min: <minimum spec value>
-#  max: <maximum spec value>
-#  scale: <scale, multiply result by scale>
-#  digits: <significant digits>
-#  unit: Unit
+idd:
+  src:
+    - ivdd_20
+  typ: 150
+  name: Active Current
+  min: 100
+  max: 300
+  scale: 1e6
+  digits: 3
+  unit: uA
+
+iddoff:
+  src:
+    - ivdd_off_20
+  typ: 1
+  name: OFF Current
+  min: 0.1
+  max: 5
+  scale: 1e6
+  digits: 3
+  unit: uA
+
+freqh:
+  src:
+    - freq_-40
+  typ: 1000
+  name: Low temp frequency
+  min: 700
+  max: 2000
+  scale: 1e-6
+  digits: 2
+  unit: MHz
+
+
+freql:
+  src:
+    - freq_125
+  typ: 600
+  name: High temp frequency
+  min: 300
+  max: 1200
+  scale: 1e-6
+  digits: 2
+  unit: MHz
