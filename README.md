@@ -10,7 +10,7 @@ Very quick and dirty temperature sensor
 # How
 See [documents/schematic.md](documents/schematic.md) for details.
 
-
+See [install.md](install.md) for clone instructions
 
 
 # What
