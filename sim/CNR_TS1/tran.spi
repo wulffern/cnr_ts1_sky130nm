@@ -5,7 +5,9 @@
 #ifdef Lay
 .include ../../../work/lpe/CNR_TS1_lpe.spi
 #else
+.include ../../../work/lpe/SUN_PLL_ROSC_lpe.spi
 .include ../../../work/xsch/CNR_TS1.spice
+
 #endif
 
 *-----------------------------------------------------------------

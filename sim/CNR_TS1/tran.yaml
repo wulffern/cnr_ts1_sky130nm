@@ -15,7 +15,7 @@ iddoff:
   typ: 1
   name: OFF Current
   min: 0.1
-  max: 5
+  max: 10
   scale: 1e6
   digits: 3
   unit: uA
@@ -23,10 +23,10 @@ iddoff:
 freqh:
   src:
     - freq_-40
-  typ: 1000
+  typ: 800
   name: Low temp frequency
-  min: 700
-  max: 2000
+  min: 300
+  max: 1200
   scale: 1e-6
   digits: 2
   unit: MHz
@@ -35,10 +35,10 @@ freqh:
 freql:
   src:
     - freq_125
-  typ: 600
+  typ: 400
   name: High temp frequency
-  min: 300
-  max: 1200
+  min: 200
+  max: 600
   scale: 1e-6
   digits: 2
   unit: MHz

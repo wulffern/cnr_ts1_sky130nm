@@ -39,7 +39,7 @@ for fname in files:
     nidd = np.array(idd)
     df = pd.DataFrame(vals, columns=['x','y'])
     df = df.sort_values(by=['x', 'y'])
-    df["est"] = (100 - ((df["y"] - offset)/1e6)*0.264) - 60
+    df["est"] = 45 - (df["y"] - offset)/1e6*0.45
     diff = df["est"] - df["x"]
 
     avgy = df["y"].mean()
