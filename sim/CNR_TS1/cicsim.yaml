@@ -1,0 +1,6 @@
+corner:
+  Lay: ''
+  Sch: ''
+ngspice:
+  library: CNR_TS1_SKY130NM
+  cell: CNR_TS1

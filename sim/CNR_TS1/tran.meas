@@ -1,0 +1,39 @@
+* Measure CNRG00_QCK_DRTY_TEMP
+.control
+
+echo "MEAS_START"
+
+
+*foreach vtemp -40 125
+
+foreach vtemp -40 -20 0 20 40 80 125
+
+
+set fend = .raw
+load {cicname}_$vtemp$fend
+
+let cut-tstart = 10n
+let cut-tstop = 100n
+cutout
+
+let ipvdd = -i(vdd)
+
+meas tran ivdd_$vtemp AVG ipvdd
+
+
+*- Do FFT
+linearize v(do_1v8)
+let ckavg = mean(v(do_1v8))
+let do = v(do_1v8) - ckavg
+fft v(do)
+write {cicname}_spec_$vtemp$fend
+
+
+
+
+end
+
+
+
+echo "MEAS_END"
+.endc
